@@ -193,7 +193,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "\u0412\u043B\u0435\u0437 \u0441 Google"
 --- !u!222 &90904306
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -231,7 +231,7 @@ RectTransform:
   m_GameObject: {fileID: 119934344}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 7, y: 7, z: 1}
   m_Children:
   - {fileID: 2033713201}
   - {fileID: 478519279}
@@ -244,7 +244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 50}
+  m_AnchoredPosition: {x: 0, y: 742}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &119934346
@@ -297,9 +297,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Login
-
-'
+  m_Text: "\u0412\u043B\u0435\u0437"
 --- !u!222 &119934348
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -351,16 +349,16 @@ RectTransform:
   m_GameObject: {fileID: 401151242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1903720083}
   m_Father: {fileID: 119934345}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 79, y: -55}
-  m_SizeDelta: {x: 235.0637, y: 173.0819}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000038147, y: -72.8}
+  m_SizeDelta: {x: 395.06372, y: 203.0819}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &401151244
 MonoBehaviour:
@@ -698,7 +696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -42.799988}
+  m_AnchoredPosition: {x: 0.000030517578, y: -162.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &621091130
@@ -1111,7 +1109,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Password
+  m_Text: "\u041F\u0430\u0440\u043E\u043B\u0430"
 --- !u!222 &921063887
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1311,9 +1309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Login
-
-'
+  m_Text: "\u0412\u043B\u0435\u0437"
 --- !u!222 &941997796
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1458,7 +1454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Okay
+  m_Text: "\u0414\u043E\u0431\u0440\u0435"
 --- !u!222 &1130443214
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1537,7 +1533,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Register
+  m_Text: "\u041D\u044F\u043C\u0430\u0448 \u0430\u043A\u0430\u0443\u043D\u0442?"
 --- !u!222 &1319401390
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1653,7 +1649,7 @@ RectTransform:
   m_GameObject: {fileID: 1793130866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children:
   - {fileID: 1130443212}
   m_Father: {fileID: 1903720083}
@@ -1859,7 +1855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: 0}
+  m_AnchoredPosition: {x: 0, y: -132.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1957065799
@@ -2200,7 +2196,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Email
+  m_Text: "\u0415-\u043C\u0435\u0439\u043B"
 --- !u!222 &2094750107
 CanvasRenderer:
   m_ObjectHideFlags: 0

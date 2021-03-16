@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Firebase;
 using Google;
 using Firebase.Auth;
+using System.Threading.Tasks;
 
 public class Login : MonoBehaviour
 {
@@ -26,6 +27,31 @@ public class Login : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         Button btn = loginButton.GetComponent<Button>();
         btn.onClick.AddListener(login);
+
+        GoogleSignIn.Configuration = new GoogleSignInConfiguration
+        {
+            RequestIdToken = true,
+            WebClientId = webClientId
+        };
+
+        Task<GoogleSignInUser> signIn = GoogleSignIn.DefaultInstance.SignIn();
+
+        TaskCompletionSource<FirebaseUser> signInCompleted = new TaskCompletionSource<FirebaseUser>();
+        signIn.ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                signInCompleted.SetCanceled();
+            }
+            else if (task.IsFaulted)
+            {
+                signInCompleted.SetException(task.Exception);
+            }
+            else
+            {
+                Credential credential = GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
+                loginWithCredentials(credential);
+            }
+        });
     }
 
     // Update is called once per frame
@@ -48,6 +74,7 @@ public class Login : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return)) {
             if (pPassword != "" && pEmail != "") {
+
                 login();
             }
         }
@@ -59,7 +86,11 @@ public class Login : MonoBehaviour
     {
         Credential credential =
         EmailAuthProvider.GetCredential(pEmail, pPassword);
+        loginWithCredentials(credential);
+    }
 
+    void loginWithCredentials(Credential credential)
+    {
         auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
             if (task.IsCanceled)
             {
@@ -72,7 +103,8 @@ public class Login : MonoBehaviour
                 ErrorHandler.displayErrorOnObject(popUp, (AuthError)fbe.ErrorCode);
                 Debug.LogError(((AuthError)fbe.ErrorCode).ToString());
             }
-            else {
+            else
+            {
                 FirebaseUser newUser = task.Result;
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
