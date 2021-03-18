@@ -13,6 +13,7 @@ public static class DownloadTexture
 
         //Send Request and wait
         yield return www.SendWebRequest();
+
         if (www.result == UnityWebRequest.Result.ConnectionError 
             || www.result == UnityWebRequest.Result.ProtocolError)
         {

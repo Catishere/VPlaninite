@@ -13,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Platforms
   - 
   - 
   - 
@@ -46,12 +46,12 @@ TagManager:
   - name: Background
     uniqueID: 414083069
     locked: 0
-  - name: Buttons and Labels
-    uniqueID: 2387816593
-    locked: 0
   - name: Sprites
     uniqueID: 3184077097
     locked: 0
   - name: Player
     uniqueID: 1196148197
+    locked: 0
+  - name: Buttons and Labels
+    uniqueID: 2387816593
     locked: 0

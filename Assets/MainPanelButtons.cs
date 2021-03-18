@@ -22,7 +22,7 @@ public class MainPanelButtons : MonoBehaviour
             string email = user.Email;
 
             if (user.PhotoUrl != null)
-                DownloadTexture.downloadImage(user.PhotoUrl.ToString(), profilePicture);
+                StartCoroutine(DownloadTexture.downloadImage(user.PhotoUrl.ToString(), profilePicture));
 
             transform.Find("ChatBubble/Text").GetComponent<Text>().text = "Здр, " + name + " кп?";
         }

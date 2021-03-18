@@ -13,7 +13,8 @@ public static class SceneLoader
         Levels,
         Game,
         Map,
-        Rewards
+        Rewards,
+        GameOver
     };
 
     public static void Load(Scene scene)
