@@ -8,8 +8,12 @@ public static class SceneLoader
     {
         Register,
         Login,
+        Main,
+        Mountains,
+        Levels,
         Game,
-        Levels
+        Map,
+        Rewards
     };
 
     public static void Load(Scene scene)

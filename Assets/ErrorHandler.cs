@@ -14,6 +14,16 @@ public static class ErrorHandler
             popUp.SetActive(true);
         });
     }
+
+    public static void displayMessageOnObject(GameObject popUp, string message)
+    {
+        UnityMainThread.wkr.AddJob(() =>
+        {
+            popUp.transform.Find("Panel/ErrorText").GetComponent<Text>().text = message;
+            popUp.SetActive(true);
+        });
+    }
+
     public static string GetErrorMessage(AuthError errorCode)
     {
         var message = "";
@@ -44,7 +54,7 @@ public static class ErrorHandler
                 message = "Въведените от вас данни са грешни.";
                 break;
             default:
-                message = "Грешка.";
+                message = "Грешка: " + errorCode.ToString();
                 break;
         }
         return message;

@@ -1,4 +1,3 @@
-using Firebase.Auth;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,15 +5,15 @@ using UnityEngine.UI;
 
 public class LevelsPanelButtons : MonoBehaviour
 {
-    public Button signOutButton;
+    public Button backButton;
 
     private void Awake()
     {
-        FirebaseAuth auth = FirebaseAuth.DefaultInstance;
-        signOutButton.onClick.AddListener(() =>
+
+        transform.Find("MountainLabel").GetComponent<Text>().text = LevelParams.mountain;
+        backButton.onClick.AddListener(() =>
         {
-            auth.SignOut();
-            SceneLoader.Load(SceneLoader.Scene.Login);
+            SceneLoader.Load(SceneLoader.Scene.Mountains);
         });
 
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Tree"))

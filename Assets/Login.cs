@@ -14,44 +14,23 @@ public class Login : MonoBehaviour
     public GameObject password;
     public GameObject popUp;
     public Button loginButton;
+    public Button loginGoogleButton;
     public string webClientId;
 
     private string pEmail;
     private string pPassword;
     FirebaseAuth auth;
+    TaskCompletionSource<FirebaseUser> signInCompleted;
 
 
     // Start is called before the first frame update
     void Start()
     {
         auth = FirebaseAuth.DefaultInstance;
-        Button btn = loginButton.GetComponent<Button>();
-        btn.onClick.AddListener(login);
-
-        GoogleSignIn.Configuration = new GoogleSignInConfiguration
-        {
-            RequestIdToken = true,
-            WebClientId = webClientId
-        };
-
-        Task<GoogleSignInUser> signIn = GoogleSignIn.DefaultInstance.SignIn();
-
-        TaskCompletionSource<FirebaseUser> signInCompleted = new TaskCompletionSource<FirebaseUser>();
-        signIn.ContinueWith(task => {
-            if (task.IsCanceled)
-            {
-                signInCompleted.SetCanceled();
-            }
-            else if (task.IsFaulted)
-            {
-                signInCompleted.SetException(task.Exception);
-            }
-            else
-            {
-                Credential credential = GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
-                loginWithCredentials(credential);
-            }
-        });
+        Button loginButtonComponent = loginButton.GetComponent<Button>();
+        Button loginGoogleButtonComponent = loginGoogleButton.GetComponent<Button>();
+        loginButtonComponent.onClick.AddListener(login);
+        loginGoogleButtonComponent.onClick.AddListener(loginWithGoogle);
     }
 
     // Update is called once per frame
@@ -89,6 +68,38 @@ public class Login : MonoBehaviour
         loginWithCredentials(credential);
     }
 
+    void loginWithGoogle()
+    {
+        if (GoogleSignIn.Configuration == null)
+        GoogleSignIn.Configuration = new GoogleSignInConfiguration
+        {
+            RequestIdToken = true,
+            WebClientId = webClientId
+        };
+
+        Task<GoogleSignInUser> signIn = GoogleSignIn.DefaultInstance.SignIn();
+
+        signInCompleted = new TaskCompletionSource<FirebaseUser>();
+        signIn.ContinueWith(task => {
+            if (task.IsCanceled)
+            {
+                signInCompleted.SetCanceled();
+                ErrorHandler.displayMessageOnObject(popUp, signIn.Status.ToString());
+            }
+            else if (task.IsFaulted)
+            {
+                signInCompleted.SetException(task.Exception);
+                GoogleSignIn.SignInException e = task.Exception.InnerExceptions[0] as GoogleSignIn.SignInException;
+                ErrorHandler.displayMessageOnObject(popUp, e.Status + e.Message);
+            }
+            else
+            {
+                Credential credential = GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
+                loginWithCredentials(credential);
+            }
+        });
+    }
+
     void loginWithCredentials(Credential credential)
     {
         auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
@@ -106,12 +117,16 @@ public class Login : MonoBehaviour
             else
             {
                 FirebaseUser newUser = task.Result;
+
+                if (signInCompleted != null)
+                    signInCompleted.SetResult(newUser);
+
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
 
                 UnityMainThread.wkr.AddJob(() =>
                 {
-                    SceneLoader.Load(SceneLoader.Scene.Levels);
+                    SceneLoader.Load(SceneLoader.Scene.Main);
                 });
             }
         });

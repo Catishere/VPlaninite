@@ -22,6 +22,12 @@
 # Visual Studio cache directory
 .vs/
 
+Assets/Plugins
+Assets/Parse/*
+Assets/GoogleSignIn
+Assets/Firebase
+*.keystore
+
 # Gradle cache directory
 .gradle/
 
