@@ -7,7 +7,7 @@ public class OnLevelOpen : MonoBehaviour
 {
     void Start()
     {
-        transform.Find("LevelLabel").GetComponent<Text>().text = "Ниво " + LevelParams.level;
+        transform.Find("LevelLabel").GetComponent<Text>().text = "Ниво " + LevelParams.Level;
         Button returnButton = transform.Find("ReturnButton").GetComponent<Button>();
         returnButton.onClick.AddListener(() =>
         {

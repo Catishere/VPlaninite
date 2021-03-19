@@ -13,6 +13,7 @@ public class Login : MonoBehaviour
     public GameObject email;
     public GameObject password;
     public GameObject popUp;
+    public PlayerSaveManager playerSaveManager;
     public Button loginButton;
     public Button loginGoogleButton;
     public string webClientId;
@@ -123,6 +124,8 @@ public class Login : MonoBehaviour
 
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
+
+                playerSaveManager.LoadPlayer(newUser.UserId);
 
                 UnityMainThread.wkr.AddJob(() =>
                 {

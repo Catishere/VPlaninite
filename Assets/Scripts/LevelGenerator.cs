@@ -22,6 +22,8 @@ public class LevelGenerator : MonoBehaviour
             spawnPosition.x = Random.Range(-levelWidth, levelWidth);
             Instantiate(plaformPrefab, spawnPosition, Quaternion.identity);
         }
+
+        LevelParams.Score = 0;
     }
 
     // Update is called once per frame

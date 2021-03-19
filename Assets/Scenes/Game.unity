@@ -441,6 +441,85 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &900976553
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 900976554}
+  - component: {fileID: 900976556}
+  - component: {fileID: 900976555}
+  m_Layer: 0
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &900976554
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900976553}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1902795064}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 3.8201, y: 918.62415}
+  m_SizeDelta: {x: 1072.4, y: 106.7495}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &900976555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900976553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 77
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 5
+    m_MaxSize: 77
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &900976556
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900976553}
+  m_CullTransparentMesh: 1
 --- !u!1 &1103143855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 417301549830086558, guid: e60cb4a5b4c4afd4ebb33ff703dedbc5, type: 3}
@@ -787,6 +866,7 @@ RectTransform:
   m_Children:
   - {fileID: 1829044095}
   - {fileID: 1119066106}
+  - {fileID: 900976554}
   m_Father: {fileID: 2146769337}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -982,8 +1062,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041355427}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -616, z: 0}
-  m_LocalScale: {x: 39.704998, y: 39.704998, z: 0.2647}
+  m_LocalPosition: {x: 10.4228, y: -714.0778, z: 0}
+  m_LocalScale: {x: 28.515898, y: 23.060808, z: 0.19010599}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -1028,7 +1108,7 @@ SpriteRenderer:
   m_SortingLayerID: 1196148197
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0005ff97a4397e9469c054bdd846e248, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fbb5eb86a24d7d42bc453e520ca1cf9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1066,18 +1146,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.161641}
+  m_Offset: {x: -0.4499748, y: -1.7193649}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.64, y: 4.99}
+    oldSize: {x: 4.72, y: 12.82}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6467261, y: 4.4268036}
+  m_Size: {x: 2.638452, y: 7.542251}
   m_EdgeRadius: 0
 --- !u!50 &2041355432
 Rigidbody2D:
@@ -1462,6 +1542,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b0a00686fbc7cd74487ee79c2b0d55d9, type: 3}
+    - target: {fileID: 417301549830086530, guid: e60cb4a5b4c4afd4ebb33ff703dedbc5, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 900976555}
     - target: {fileID: 417301549830086531, guid: e60cb4a5b4c4afd4ebb33ff703dedbc5, type: 3}
       propertyPath: m_Offset.x
       value: -1

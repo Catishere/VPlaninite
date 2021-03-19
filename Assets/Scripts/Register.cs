@@ -18,6 +18,7 @@ public class Register : MonoBehaviour
     private string pEmail;
     private string pPassword;
     FirebaseAuth auth;
+    public PlayerSaveManager playerSaveManager;
 
 
     // Start is called before the first frame update
@@ -78,6 +79,12 @@ public class Register : MonoBehaviour
                 Debug.LogFormat("Firebase user created successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
 
+
+                PlayerData pd = new PlayerData();
+                pd.UserId = newUser.UserId;
+                LevelParams.Player = pd;
+
+                playerSaveManager.SavePlayer(LevelParams.Player);
                 UnityMainThread.wkr.AddJob(() =>
                 {
                     SceneLoader.Load(SceneLoader.Scene.Login);

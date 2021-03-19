@@ -8,10 +8,21 @@ public class GameOverInit : MonoBehaviour
     public Button retryButton;
     public Button levelsButton;
     public Text gameOverText;
+    public PlayerSaveManager playerSaveManager;
+
     // Start is called before the first frame update
-    private void Awake()
+    private void Start()
     {
         gameOverText.text = EndGameStrings.GetString();
+        if (LevelParams.Player != null)
+        {
+            LevelParams.Player.GamesPlayed++;
+            if (LevelParams.Player.Highscore < LevelParams.Score)
+            {
+                LevelParams.Player.Highscore = LevelParams.Score;
+            }
+            playerSaveManager.SavePlayer(LevelParams.Player);
+        }
 
         retryButton.onClick.AddListener(() =>
         {

@@ -19,7 +19,7 @@ public class MountainsPanelButtons : MonoBehaviour
             Button tree = obj.GetComponent<Button>();
             tree.onClick.AddListener(() =>
             {
-                LevelParams.mountain = tree.transform.Find("Text").GetComponent<Text>().text;
+                LevelParams.Mountain = tree.transform.Find("Text").GetComponent<Text>().text;
                 SceneLoader.Load(SceneLoader.Scene.Levels);
             });
         }

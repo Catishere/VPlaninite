@@ -10,7 +10,7 @@ public class LevelsPanelButtons : MonoBehaviour
     private void Awake()
     {
 
-        transform.Find("MountainLabel").GetComponent<Text>().text = LevelParams.mountain;
+        transform.Find("MountainLabel").GetComponent<Text>().text = LevelParams.Mountain;
         backButton.onClick.AddListener(() =>
         {
             SceneLoader.Load(SceneLoader.Scene.Mountains);
@@ -21,7 +21,7 @@ public class LevelsPanelButtons : MonoBehaviour
             Button tree = obj.GetComponent<Button>();
             tree.onClick.AddListener(() =>
             {
-                LevelParams.level = tree.transform.Find("Text").GetComponent<Text>().text;
+                LevelParams.Level = tree.transform.Find("Text").GetComponent<Text>().text;
                 SceneLoader.Load(SceneLoader.Scene.Game);
             });
         }
