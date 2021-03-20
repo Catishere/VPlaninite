@@ -1,3 +1,4 @@
+using Firebase.Auth;
 using Firebase.Database;
 using System;
 using System.Collections;
@@ -34,9 +35,12 @@ public class PlayerSaveManager : MonoBehaviour
         }
     }
 
-    public void LoadPlayer(string userId)
+    public void LoadPlayer(FirebaseUser user)
     {
-        _ref.Child(userId).GetValueAsync().ContinueWith(task => {
+        _ref.Child(user.UserId).GetValueAsync().ContinueWith(task => {
+            
+            PlayerData playerData;
+
             if (task.IsFaulted)
             {
                 Debug.LogError(task.Exception);
@@ -44,22 +48,9 @@ public class PlayerSaveManager : MonoBehaviour
             else if (task.IsCompleted)
             {
                 DataSnapshot snapshot = task.Result;
-                PlayerData playerData = new PlayerData();
-                playerData.UserId = userId;
-
-                try
-                {
-                    string a = snapshot.Child(userId).Child("GamesPlayed").Value.ToString();
-                    string b = snapshot.Child(userId).Child("Highscore").Value.ToString();
-                    Debug.Log(a + b);
-                    playerData.GamesPlayed = 0;
-                    playerData.Highscore = 0;
-                } catch (Exception e)
-                {
-                    Debug.Log(e);
-                }
-
-                Debug.Log("Loaded Player" + JsonUtility.ToJson(playerData));
+                playerData = JsonUtility.FromJson<PlayerData>(snapshot.GetRawJsonValue());
+                playerData.UserId = user.UserId;
+                playerData.Email = user.Email;
                 LevelParams.Player = playerData;
             }
         });

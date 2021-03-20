@@ -125,7 +125,7 @@ public class Login : MonoBehaviour
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
 
-                playerSaveManager.LoadPlayer(newUser.UserId);
+                playerSaveManager.LoadPlayer(newUser);
 
                 UnityMainThread.wkr.AddJob(() =>
                 {

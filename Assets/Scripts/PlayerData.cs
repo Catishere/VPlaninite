@@ -3,6 +3,7 @@ public class PlayerData
 {
     [NonSerialized]
     public string UserId;
+    public string Email;
     public int Highscore;
     public int GamesPlayed;
 
@@ -10,9 +11,10 @@ public class PlayerData
     {
     }
 
-    public PlayerData(string userId, int highscore, int gamesPlayed)
+    public PlayerData(string userId, string email, int highscore, int gamesPlayed)
     {
         UserId = userId;
+        Email = email;
         Highscore = highscore;
         GamesPlayed = gamesPlayed;
     }

@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class RewardsButtons : MonoBehaviour
 {
-    public Text text;
     public Button backButton;
+    public ShowRanklist showRanklist;
     // Start is called before the first frame update
     private void Awake()
     {
+        showRanklist.LoadRanklist();
         backButton.onClick.AddListener(() =>
         {
             SceneLoader.Load(SceneLoader.Scene.Main);
