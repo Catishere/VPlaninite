@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58R12AGRCN",
         "name": "com.cat.vplaninite",
-        "processId": 31965,
+        "processId": 9319,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -384,6 +384,18 @@
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
             "processId": 31965,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 387,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 9319,
             "exited": false
         }
     ],

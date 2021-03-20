@@ -23,7 +23,7 @@ public class ShowRanklist : MonoBehaviour
 
     public void LoadRanklist()
     {
-        valueQuery = _ref.OrderByChild("Highscore").OrderByValue().LimitToLast(5);
+        valueQuery = _ref.OrderByChild("Highscore").LimitToLast(5);
         valueQuery.ValueChanged += HandleValueChanged;
     }
 
