@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +14,9 @@ public class GameOverInit : MonoBehaviour
     private void Start()
     {
         gameOverText.text = EndGameStrings.GetString();
+
+        GameObject.Find("Panel/Score").GetComponent<Text>().text = "Резултат\n" + LevelParams.Score;
+
         if (LevelParams.Player != null)
         {
             LevelParams.Player.GamesPlayed++;

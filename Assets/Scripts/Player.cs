@@ -1,32 +1,46 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    public float movement = 0f;
-    public float movementSpeed = 1500f;
+    public float movementSpeed;
     Rigidbody2D rb;
-    Gyroscope m_Gyro;
 
-    // Start is called before the first frame update
+    private const float updateSpeed = 5.0f;
+    private float AccelerometerUpdateInterval = 1.0f / updateSpeed;
+    private float LowPassKernelWidthInSeconds = 1.0f;
+    private float LowPassFilterFactor = 0;
+    private Vector3 lowPassValue = Vector3.zero;
+    private float halfScreen = Screen.width / 2;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        m_Gyro = Input.gyro;
-        m_Gyro.enabled = true;
+        rb = GetComponent<Rigidbody2D>();    
+        //Filter Accelerometer
+        LowPassFilterFactor = AccelerometerUpdateInterval / LowPassKernelWidthInSeconds;
+        lowPassValue = Input.acceleration;
     }
 
     // Update is called once per frame
     void Update()
     {
-        movement = m_Gyro.rotationRateUnbiased.y * movementSpeed;
+        LevelParams.Score = Mathf.Max((int)gameObject.transform.position.y + 1000, LevelParams.Score);
+        GameObject.Find("Canvas/Panel/Score").GetComponent<Text>().text = "Toчки: " + LevelParams.Score;
+        lowPassValue = Vector3.Lerp(lowPassValue, Input.acceleration, LowPassFilterFactor);
+
+        if (transform.position.x > halfScreen)
+            transform.position = new Vector3(transform.position.x - Screen.width, transform.position.y, transform.position.z);
+        else if (transform.position.x < -halfScreen)
+            transform.position = new Vector3(transform.position.x + Screen.width, transform.position.y, transform.position.z);
     }
+
     private void FixedUpdate()
     {
         Vector2 velocity = rb.velocity;
-        velocity.x = movement;
+        velocity.x = lowPassValue.x * movementSpeed;
         rb.velocity = velocity;
     }
 }
