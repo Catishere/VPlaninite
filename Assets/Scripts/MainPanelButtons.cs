@@ -1,4 +1,5 @@
 ﻿using Firebase.Auth;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,12 @@ public class MainPanelButtons : MonoBehaviour
         FirebaseUser user = auth.CurrentUser;
         if (user != null)
         {
-            string name = user.DisplayName.Split(' ')[0];
+            string name;
+            if (user.DisplayName.Equals(string.Empty))
+                name = user.Email.Split('@')[0];
+            else
+                name = user.DisplayName.Split(' ')[0];
+
             string email = user.Email;
 
             if (user.PhotoUrl != null)

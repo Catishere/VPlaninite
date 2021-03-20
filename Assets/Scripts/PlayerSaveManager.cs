@@ -50,7 +50,10 @@ public class PlayerSaveManager : MonoBehaviour
                 DataSnapshot snapshot = task.Result;
                 playerData = JsonUtility.FromJson<PlayerData>(snapshot.GetRawJsonValue());
                 playerData.UserId = user.UserId;
-                playerData.Email = user.Email;
+                if (user.Email.Trim().Equals(String.Empty))
+                    playerData.Email = user.DisplayName;
+                else
+                    playerData.Email = user.Email;
                 LevelParams.Player = playerData;
             }
         });
