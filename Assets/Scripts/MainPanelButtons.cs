@@ -31,6 +31,7 @@ public class MainPanelButtons : MonoBehaviour
                 StartCoroutine(DownloadTexture.downloadImage(user.PhotoUrl.ToString(), profilePicture));
 
             transform.Find("ChatBubble/Text").GetComponent<Text>().text = "Здр, " + name + " кп?";
+            transform.Find("TopPanel/Username").GetComponent<Text>().text = name;
         }
 
         signOutButton.onClick.AddListener(() =>
