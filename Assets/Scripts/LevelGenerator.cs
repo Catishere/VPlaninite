@@ -23,7 +23,16 @@ public class LevelGenerator : MonoBehaviour
         {
             spawnPosition.y += Random.Range(minY, maxY);
             spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-            int plat = Random.Range(0, 100) > 90 ? 1 : 0;
+            int rng = Random.Range(0, 100);
+            int plat;
+
+            if (rng > 95)
+                plat = 1;
+            else if (rng > 80)
+                plat = 2;
+            else
+                plat = 0;
+
             Instantiate(plaformPrefabs[plat], spawnPosition, Quaternion.identity);
         }
 

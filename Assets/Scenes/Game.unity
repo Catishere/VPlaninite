@@ -237,6 +237,7 @@ MonoBehaviour:
   plaformPrefabs:
   - {fileID: 2765802637196796017, guid: 90dc5970ba3ffd848a90d9810f6c9d5d, type: 3}
   - {fileID: 6528364478293061129, guid: 05c5de73a8945384f8d2bbdf039bb21f, type: 3}
+  - {fileID: 844243108527576063, guid: 9a97d329ed4a4c344b8cac2b33b4179c, type: 3}
   numberOfPlatforms: 200
   levelWidth: 520
   minY: 200
@@ -1050,7 +1051,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4000
-  mainCamera: {fileID: 2120070202}
 --- !u!61 &2041355431
 BoxCollider2D:
   m_ObjectHideFlags: 0

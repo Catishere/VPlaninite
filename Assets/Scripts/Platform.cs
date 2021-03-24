@@ -5,6 +5,7 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     public float jumpForce;
+    public bool fake = false;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
@@ -13,9 +14,14 @@ public class Platform : MonoBehaviour
         {
             if (rb != null)
             {
-                Vector2 velocity = rb.velocity;
-                velocity.y = jumpForce;
-                rb.velocity = velocity;
+                if (fake)
+                    Destroy(gameObject);
+                else
+                {
+                    Vector2 velocity = rb.velocity;
+                    velocity.y = jumpForce;
+                    rb.velocity = velocity;
+                }
             }
         }
     }
