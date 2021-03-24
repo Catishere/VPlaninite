@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Firebase;
 using Google;
 using Firebase.Auth;
+using System;
 
 public class Register : MonoBehaviour
 {
@@ -83,8 +84,15 @@ public class Register : MonoBehaviour
                 PlayerData pd = new PlayerData();
                 pd.UserId = newUser.UserId;
                 LevelParams.Player = pd;
+                try
+                {
+                    playerSaveManager.SavePlayer(LevelParams.Player);
+                }
+                catch (Exception e)
+                {
+                    Debug.Log(e.Message);
+                }
 
-                playerSaveManager.SavePlayer(LevelParams.Player);
                 UnityMainThread.wkr.AddJob(() =>
                 {
                     SceneLoader.Load(SceneLoader.Scene.Login);

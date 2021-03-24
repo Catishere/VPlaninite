@@ -23,6 +23,7 @@ public class PlayerSaveManager : MonoBehaviour
     {
         if (!player.Equals(LastPlayerData))
         {
+            
             _ref.Child(player.UserId).SetRawJsonValueAsync(JsonUtility.ToJson(player)).ContinueWith((action) =>
             {
                 if (action.IsFaulted)
@@ -30,7 +31,7 @@ public class PlayerSaveManager : MonoBehaviour
                     Debug.LogError(action.Exception);
                 }
                 else
-                    Debug.Log(action.Status);
+                    Debug.Log(action.ToString());
             });
         }
     }
@@ -50,7 +51,9 @@ public class PlayerSaveManager : MonoBehaviour
                 DataSnapshot snapshot = task.Result;
                 playerData = JsonUtility.FromJson<PlayerData>(snapshot.GetRawJsonValue());
                 playerData.UserId = user.UserId;
-                if (user.Email.Trim().Equals(String.Empty))
+
+                Debug.Log("STARTL::LL:L" + user.Email + "  " + user.DisplayName);
+                if (string.IsNullOrEmpty(user.Email))
                     playerData.Email = user.DisplayName;
                 else
                     playerData.Email = user.Email;

@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float movementSpeed;
+    public Camera mainCamera;
     Rigidbody2D rb;
 
     private const float updateSpeed = 5.0f;
@@ -14,10 +15,13 @@ public class Player : MonoBehaviour
     private float LowPassKernelWidthInSeconds = 1.0f;
     private float LowPassFilterFactor = 0;
     private Vector3 lowPassValue = Vector3.zero;
-    private float halfScreen = Screen.width / 2;
+    private float fullScreen;
+    private float halfScreen;
 
     void Start()
     {
+        fullScreen = mainCamera.pixelWidth;
+        halfScreen = mainCamera.pixelWidth / 2;
         rb = GetComponent<Rigidbody2D>();    
         //Filter Accelerometer
         LowPassFilterFactor = AccelerometerUpdateInterval / LowPassKernelWidthInSeconds;
@@ -27,14 +31,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LevelParams.Score = Mathf.Max((int)gameObject.transform.position.y + 1000, LevelParams.Score);
+        LevelParams.Score = Mathf.Max((int)((gameObject.transform.position.y + 100) / 10), LevelParams.Score);
         GameObject.Find("Canvas/Panel/Score").GetComponent<Text>().text = "Toчки: " + LevelParams.Score;
         lowPassValue = Vector3.Lerp(lowPassValue, Input.acceleration, LowPassFilterFactor);
 
         if (transform.position.x > halfScreen)
-            transform.position = new Vector3(transform.position.x - Screen.width, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - fullScreen, transform.position.y, transform.position.z);
         else if (transform.position.x < -halfScreen)
-            transform.position = new Vector3(transform.position.x + Screen.width, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + fullScreen, transform.position.y, transform.position.z);
     }
 
     private void FixedUpdate()

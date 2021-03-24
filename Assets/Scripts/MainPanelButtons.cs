@@ -20,11 +20,16 @@ public class MainPanelButtons : MonoBehaviour
         if (user != null)
         {
             string name;
-            if (user.DisplayName.Equals(string.Empty))
+            if (string.IsNullOrEmpty(user.DisplayName))
+            {
                 name = user.Email.Split('@')[0];
+                LevelParams.Player.Email = user.Email;
+            }
             else
+            {
                 name = user.DisplayName.Split(' ')[0];
-
+                LevelParams.Player.Email = user.DisplayName;
+            }
             string email = user.Email;
 
             if (user.PhotoUrl != null)

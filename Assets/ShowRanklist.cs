@@ -40,7 +40,8 @@ public class ShowRanklist : MonoBehaviour
             foreach (var childSnapshot in e2.Snapshot.Children)
             {
                 PlayerData pd = JsonUtility.FromJson<PlayerData>(childSnapshot.GetRawJsonValue());
-                ranking.text += pd.Email + ": " + pd.Highscore + "\n";
+                if (!string.IsNullOrEmpty(pd.Email))
+                    ranking.text += pd.Email + ": " + pd.Highscore + "\n";
             }
         }
     }

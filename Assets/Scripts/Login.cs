@@ -127,6 +127,12 @@ public class Login : MonoBehaviour
 
                 playerSaveManager.LoadPlayer(newUser);
 
+                if (credential.Provider == "google.com")
+                {
+                    LevelParams.Player = new PlayerData();
+                    LevelParams.Player.UserId = newUser.UserId;
+                } 
+
                 UnityMainThread.wkr.AddJob(() =>
                 {
                     SceneLoader.Load(SceneLoader.Scene.Main);

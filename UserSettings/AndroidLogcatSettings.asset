@@ -1,9 +1,9 @@
 {
-    "m_SelectedDeviceId": "R58R12AGRCN",
+    "m_SelectedDeviceId": "520067b34ba95581",
     "m_SelectedPackage": {
-        "deviceId": "R58R12AGRCN",
+        "deviceId": "520067b34ba95581",
         "name": "com.cat.vplaninite",
-        "processId": 16096,
+        "processId": 8025,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,415 +11,103 @@
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 26070,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 5035,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 14010,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 20458,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 23904,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 25682,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 27257,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 5504,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 29682,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 32393,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 14442,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 17255,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 19214,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 23265,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 15067,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 21886,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 25444,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 4059,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 8910,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 20313,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 3972,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 14710,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 8627,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 14417,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 15137,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 16831,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 25111,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 9666,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 28910,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 31050,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 29865,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 30473,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 2870,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 3740,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 4454,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 4988,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 5563,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 6025,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 7353,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 8483,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 10631,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 11177,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 12435,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 12962,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 13447,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 14192,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 15570,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 17962,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 18675,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 19165,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 19854,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 21699,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 22822,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 23877,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 25125,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 26086,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 27041,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 27790,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 28638,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 29673,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 30884,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 31469,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 31965,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 387,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 9319,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 13937,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
             "processId": 4896,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
             "processId": 7919,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
             "processId": 16096,
+            "exited": true
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 13546,
+            "exited": true
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 19258,
+            "exited": true
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 21566,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 28930,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 30485,
+            "exited": false
+        },
+        {
+            "deviceId": "FFY5T17C11001275",
+            "name": "com.cat.vplaninite",
+            "processId": 18229,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 19361,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 21875,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 29242,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 1222,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 4838,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 5768,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 6890,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 8025,
             "exited": false
         }
     ],
