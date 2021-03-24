@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "520067b34ba95581",
         "name": "com.cat.vplaninite",
-        "processId": 8025,
+        "processId": 13765,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -108,6 +108,36 @@
             "deviceId": "520067b34ba95581",
             "name": "com.cat.vplaninite",
             "processId": 8025,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 8806,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 10471,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 11141,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 12416,
+            "exited": false
+        },
+        {
+            "deviceId": "520067b34ba95581",
+            "name": "com.cat.vplaninite",
+            "processId": 13765,
             "exited": false
         }
     ],
