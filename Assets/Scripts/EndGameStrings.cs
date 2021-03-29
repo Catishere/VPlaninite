@@ -14,8 +14,17 @@ public static class EndGameStrings
         "Просто спри играта."
     };
 
+    private static List<string> WinEndGameSrings = new List<string>()
+    {
+        "Алпиниста на квартала",
+        "Планинска коза",
+        "Май си нямаме работа, а?"
+    };
+
     public static string GetString()
     {
+        if (LevelParams.IsWin)
+            return WinEndGameSrings[Random.Range(0, WinEndGameSrings.Count)];
         return EndGameSrings[Random.Range(0, EndGameSrings.Count)];
     }
 }

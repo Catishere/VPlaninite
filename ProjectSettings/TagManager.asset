@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Tree
   - Mountain
+  - GameObject
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Platforms
+  - Game
   - 
   - 
   - 

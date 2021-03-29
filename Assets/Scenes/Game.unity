@@ -238,6 +238,7 @@ MonoBehaviour:
   - {fileID: 2765802637196796017, guid: 90dc5970ba3ffd848a90d9810f6c9d5d, type: 3}
   - {fileID: 6528364478293061129, guid: 05c5de73a8945384f8d2bbdf039bb21f, type: 3}
   - {fileID: 844243108527576063, guid: 9a97d329ed4a4c344b8cac2b33b4179c, type: 3}
+  - {fileID: 4768635712132572484, guid: bfea61972514c0b45aacd52499af722e, type: 3}
   numberOfPlatforms: 200
   levelWidth: 520
   minY: 200
@@ -643,6 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 2000
+  fake: 0
 --- !u!251 &1103143860
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -966,9 +968,9 @@ GameObject:
   - component: {fileID: 2041355432}
   - component: {fileID: 2041355431}
   - component: {fileID: 2041355430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: GameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1064,7 +1066,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.44997478, y: -5.1048903}
+  m_Offset: {x: -0.44997478, y: -2.625931}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1075,7 +1077,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.638452, y: 0.7711992}
+  m_Size: {x: 2.638452, y: 5.729118}
   m_EdgeRadius: 0
 --- !u!50 &2041355432
 Rigidbody2D:

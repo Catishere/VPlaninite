@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2765802637196796012}
   - component: {fileID: 2765802637196796013}
   - component: {fileID: 2765802637196796010}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: GameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 2000
-  score: {fileID: 1003198242849658100, guid: 27c3d3e04c9bf71449e3a103681ee978, type: 3}
+  fake: 0
 --- !u!251 &2765802637196796010
 PlatformEffector2D:
   m_ObjectHideFlags: 0

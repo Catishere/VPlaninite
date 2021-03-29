@@ -4,6 +4,7 @@ using UnityEngine;
 
 public static class LevelParams
 {
+    public static bool IsWin { get; set; }
     public static string Level { get; set; }
     public static PlayerData Player { get; set; }
     public static string Mountain { get; set; }

@@ -17,24 +17,24 @@ public class LevelGenerator : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3(0f, -1000f);
         QualitySettings.vSyncCount = 1;
-        Application.targetFrameRate = 60;
+
+        float step = 0;
+        if (LevelParams.Level != null)
+            step = 50 * int.Parse(LevelParams.Level);
 
         for (int i = 0; i < numberOfPlatforms; i++)
         {
-            spawnPosition.y += Random.Range(minY, maxY);
+            spawnPosition.y += Random.Range(minY + step, maxY);
             spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-            int rng = Random.Range(0, 100);
-            int plat;
-
-            if (rng > 95)
-                plat = 1;
-            else if (rng > 80)
-                plat = 2;
-            else
-                plat = 0;
-
-            Instantiate(plaformPrefabs[plat], spawnPosition, Quaternion.identity);
+            Instantiate(plaformPrefabs[0], spawnPosition, Quaternion.identity);
         }
+
+        spawnPosition.x = 0;
+
+        Instantiate(plaformPrefabs[3], spawnPosition, Quaternion.identity);
+
+        populateLevel(plaformPrefabs[1], 25);
+        populateLevel(plaformPrefabs[2], 25);
 
         LevelParams.Score = 0;
     }
@@ -46,6 +46,17 @@ public class LevelGenerator : MonoBehaviour
         {
             GameObject.Find("Player").GetComponent<Rigidbody2D>().WakeUp();
             isAwake = true;
+        }
+    }
+
+    void populateLevel(GameObject platform, int count)
+    {
+        Vector3 spawnPosition = new Vector3(0f, -1000f);
+        for (int i = 0; i < count; i++)
+        {
+            spawnPosition.y = Random.Range(0f, 98000f);
+            spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+            Instantiate(platform, spawnPosition, Quaternion.identity);
         }
     }
 }
