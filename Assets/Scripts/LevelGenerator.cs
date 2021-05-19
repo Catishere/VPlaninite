@@ -33,9 +33,6 @@ public class LevelGenerator : MonoBehaviour
 
         Instantiate(plaformPrefabs[3], spawnPosition, Quaternion.identity);
 
-        populateLevel(plaformPrefabs[1], 25);
-        populateLevel(plaformPrefabs[2], 25);
-
         LevelParams.Score = 0;
     }
 
@@ -46,17 +43,6 @@ public class LevelGenerator : MonoBehaviour
         {
             GameObject.Find("Player").GetComponent<Rigidbody2D>().WakeUp();
             isAwake = true;
-        }
-    }
-
-    void populateLevel(GameObject platform, int count)
-    {
-        Vector3 spawnPosition = new Vector3(0f, -1000f);
-        for (int i = 0; i < count; i++)
-        {
-            spawnPosition.y = Random.Range(0f, 98000f);
-            spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-            Instantiate(platform, spawnPosition, Quaternion.identity);
         }
     }
 }

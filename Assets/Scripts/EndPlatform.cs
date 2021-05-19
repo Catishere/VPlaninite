@@ -11,10 +11,7 @@ public class EndPlatform : MonoBehaviour
         if (rb != null)
         {
             LevelParams.IsWin = true;
-            UnityMainThread.wkr.AddJob(() =>
-            {
-                SceneLoader.Load(SceneLoader.Scene.GameOver);
-            });
+            SceneLoader.Load(SceneLoader.Scene.GameOver);
         }
     }
 }

@@ -7,7 +7,9 @@ using UnityEngine.UI;
 
 public class ShowRanklist : MonoBehaviour
 {
-    public Text ranking;
+    public GameObject list;
+    public GameObject listItem; 
+
     private const string user_key = "users";
     private FirebaseDatabase _database;
     private DatabaseReference _ref;
@@ -34,14 +36,22 @@ public class ShowRanklist : MonoBehaviour
             Debug.LogError(e2.DatabaseError.Message);
         }
 
+        foreach (Transform child in list.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
         if (e2.Snapshot != null && e2.Snapshot.ChildrenCount > 0)
         {
-            ranking.text = "";
             foreach (var childSnapshot in e2.Snapshot.Children)
             {
                 PlayerData pd = JsonUtility.FromJson<PlayerData>(childSnapshot.GetRawJsonValue());
-                if (!string.IsNullOrEmpty(pd.Email))
-                    ranking.text += pd.Email + ": " + pd.Highscore + "\n";
+                if (string.IsNullOrEmpty(pd.Email)) continue;
+
+                var obj = Instantiate(listItem);
+                obj.transform.Find("Text").GetComponent<Text>().text = pd.Email + ": " + pd.Highscore;
+                obj.transform.parent = list.transform;
+                obj.transform.SetAsFirstSibling();
             }
         }
     }
