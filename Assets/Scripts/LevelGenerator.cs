@@ -25,11 +25,14 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < numberOfPlatforms; i++)
         {
             spawnPosition.y += Random.Range(minY + step, maxY);
-            spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+            spawnPosition.x = Random.Range(-levelWidth, levelWidth); 
             Instantiate(plaformPrefabs[0], spawnPosition, Quaternion.identity);
         }
 
         spawnPosition.x = 0;
+
+        PopulateLevel(-9950f, spawnPosition.y, numberOfPlatforms/8, plaformPrefabs[1]);
+        PopulateLevel(-9950f, spawnPosition.y, numberOfPlatforms / 4, plaformPrefabs[2]);
 
         Instantiate(plaformPrefabs[3], spawnPosition, Quaternion.identity);
 
@@ -43,6 +46,17 @@ public class LevelGenerator : MonoBehaviour
         {
             GameObject.Find("Player").GetComponent<Rigidbody2D>().WakeUp();
             isAwake = true;
+        }
+    }
+
+    private void PopulateLevel(float min, float max, int count, GameObject type)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 spawnPosition = new Vector3(0f, -1000f);
+            spawnPosition.y += Random.Range(min, max);
+            spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+            Instantiate(type, spawnPosition, Quaternion.identity);
         }
     }
 }
