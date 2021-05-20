@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58R12AGRCN",
         "name": "com.cat.vplaninite",
-        "processId": 27417,
+        "processId": 27325,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -78,6 +78,48 @@
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
             "processId": 27417,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 28424,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 28983,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 10677,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 5758,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 10135,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 26095,
+            "exited": false
+        },
+        {
+            "deviceId": "R58R12AGRCN",
+            "name": "com.cat.vplaninite",
+            "processId": 27325,
             "exited": false
         },
         {

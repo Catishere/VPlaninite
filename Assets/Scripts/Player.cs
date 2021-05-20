@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
         velocity.x = lowPassValue.x * movementSpeed;
+        transform.localRotation = velocity.x > 0 ? Quaternion.Euler(0, 180.0f, 0) : Quaternion.Euler(0, 0, 0);
         rb.velocity = velocity;
     }
 }
