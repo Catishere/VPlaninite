@@ -93,6 +93,7 @@ public class QuizButtons : MonoBehaviour
     private void SetUpQuestion()
     {
         Question q;
+        _question ??= Questions.GetQuestion();
         do
         {
            q = Questions.GetQuestion();

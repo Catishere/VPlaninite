@@ -22,6 +22,8 @@
 # Visual Studio cache directory
 .vs/
 
+ProjectSettings/*
+ProjectSettings
 Assets/Plugins
 Assets/Parse/*
 Assets/GoogleSignIn
