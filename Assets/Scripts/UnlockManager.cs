@@ -10,11 +10,11 @@ public class UnlockManager : MonoBehaviour
     void Start()
     {
         int level = int.Parse(levelText.text);
-        if (level != 1 && LevelParams.Player.LevelReached < level)
+        if (level != 1 && LevelParams.Player?.LevelReached < level)
         {
             gameObject.GetComponent<Button>().interactable = false;
         }
-        Debug.Log(level + " " + LevelParams.Player.LevelReached);
+        Debug.Log(level + " " + LevelParams.Player?.LevelReached);
     }
 
     // Update is called once per frame

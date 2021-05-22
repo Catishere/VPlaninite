@@ -534,7 +534,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2553070458223380958, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
       propertyPath: m_Text
-      value: "\u0421\u0442\u0430\u0440\u0430\n\u041F\u043B\u0430\u043D\u0438\u043D\u0430"
+      value: "\u0412\u0438\u0442\u043E\u0448\u0430"
       objectReference: {fileID: 0}
     - target: {fileID: 2553070458223380958, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
       propertyPath: m_FontData.m_MinSize
