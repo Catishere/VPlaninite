@@ -35,7 +35,7 @@ public class MainPanelButtons : MonoBehaviour
             if (user.PhotoUrl != null)
                 StartCoroutine(DownloadTexture.downloadImage(user.PhotoUrl.ToString(), profilePicture));
 
-            transform.Find("ChatBubble/Text").GetComponent<Text>().text = "Здр, " + name + " кп?";
+            transform.Find("ChatBubble/Text").GetComponent<Text>().text = "Здравей, " + name + " готов ли си за приключения?";
             transform.Find("TopPanel/Username").GetComponent<Text>().text = name;
         }
 
