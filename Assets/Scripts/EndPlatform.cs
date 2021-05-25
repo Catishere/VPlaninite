@@ -8,10 +8,8 @@ public class EndPlatform : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            LevelParams.IsWin = true;
-            SceneLoader.Load(SceneLoader.Scene.GameOver);
-        }
+        if (rb == null) return;
+        LevelParams.IsWin = true;
+        SceneLoader.Load(LevelParams.Level == "6" ? SceneLoader.Scene.Map : SceneLoader.Scene.GameOver);
     }
 }

@@ -26,12 +26,13 @@ public class PlayerSaveManager : MonoBehaviour
             
             _ref.Child(player.UserId).SetRawJsonValueAsync(JsonUtility.ToJson(player)).ContinueWith((action) =>
             {
+                Debug.Log(JsonUtility.ToJson(player));
                 if (action.IsFaulted)
                 {
-                    Debug.LogError(action.Exception);
+                    Debug.LogError("Save Player" + action.Exception);
                 }
                 else
-                    Debug.Log(action.ToString());
+                    Debug.Log("Save Player" + action.ToString());
             });
         }
     }

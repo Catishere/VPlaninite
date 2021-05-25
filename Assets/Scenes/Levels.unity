@@ -341,7 +341,6 @@ GameObject:
   - component: {fileID: 1130443214}
   - component: {fileID: 1130443213}
   - component: {fileID: 1130443216}
-  - component: {fileID: 1130443217}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -483,25 +482,14 @@ MonoBehaviour:
   backButton: {fileID: 1666204146}
   backgrounds:
   - {fileID: 21300000, guid: 25686b93b0b59d64b8b9a41e804b0304, type: 3}
-  - {fileID: 21300000, guid: 80551142e59e3944fa1a87f46dd635d8, type: 3}
-  - {fileID: 21300000, guid: 4c72d53b475c2d942a4f083aea640bc8, type: 3}
+  - {fileID: 21300000, guid: bcb27ef2626b6804e804c31dd30e900f, type: 3}
+  - {fileID: 21300000, guid: bcb27ef2626b6804e804c31dd30e900f, type: 3}
   - {fileID: 21300000, guid: 25686b93b0b59d64b8b9a41e804b0304, type: 3}
---- !u!114 &1130443217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130443211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc386ae20685fee409bf0da4a00dfd5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  backgrounds:
-  - {fileID: 21300000, guid: 25686b93b0b59d64b8b9a41e804b0304, type: 3}
-  - {fileID: 21300000, guid: 80551142e59e3944fa1a87f46dd635d8, type: 3}
-  - {fileID: 21300000, guid: 4c72d53b475c2d942a4f083aea640bc8, type: 3}
+  signs:
+  - {fileID: 21300000, guid: fdee3b159827d19458c39b21c84cdc98, type: 3}
+  - {fileID: 21300000, guid: 0d9dfdd939e07624facc666c82b624fa, type: 3}
+  - {fileID: 21300000, guid: c1797e0551ea9494cb66db9e5ff318e8, type: 3}
+  - {fileID: 21300000, guid: fdee3b159827d19458c39b21c84cdc98, type: 3}
 --- !u!1 &1293640997
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "R58R12AGRCN",
         "name": "com.cat.vplaninite",
-        "processId": 27923,
+        "processId": 14196,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,121 +11,37 @@
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 12222,
+            "processId": 1586,
             "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 12748,
+            "processId": 10292,
             "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 13464,
+            "processId": 12456,
             "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 15597,
+            "processId": 12995,
             "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 16293,
+            "processId": 13520,
             "exited": true
         },
         {
             "deviceId": "R58R12AGRCN",
-            "name": "com.sec.android.app.launcher",
-            "processId": 2071,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
             "name": "com.cat.vplaninite",
-            "processId": 1558,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 31094,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 1970,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 6234,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 25846,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 27417,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 28424,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 28983,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 10677,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 5758,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 10135,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 26095,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 27325,
-            "exited": false
-        },
-        {
-            "deviceId": "R58R12AGRCN",
-            "name": "com.cat.vplaninite",
-            "processId": 27923,
+            "processId": 14196,
             "exited": false
         },
         {

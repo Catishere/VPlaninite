@@ -14,16 +14,24 @@ public class GameOverInit : MonoBehaviour
     private void Start()
     {
         gameOverText.text = EndGameStrings.GetString();
-        if (LevelParams.IsWin)
-        {
-            LevelParams.Player.LevelReached = int.Parse(LevelParams.Level) + 1;
-            LevelParams.IsWin = false;
-        }
 
         GameObject.Find("Panel/Score").GetComponent<Text>().text = "Резултат\n" + LevelParams.Score;
 
         if (LevelParams.Player != null)
         {
+            if (LevelParams.IsWin)
+            {
+                if (LevelParams.Player.LevelReachedKeys.Contains(LevelParams.Mountain))
+                    LevelParams.Player.LevelReachedValues[LevelParams.Player.LevelReachedKeys.IndexOf(LevelParams.Mountain)] = int.Parse(LevelParams.Level) + 1;
+                else
+                {
+                    LevelParams.Player.LevelReachedKeys.Add(LevelParams.Mountain);
+                    LevelParams.Player.LevelReachedValues.Add(int.Parse(LevelParams.Level) + 1);
+                }
+
+                LevelParams.IsWin = false;
+            }
+
             LevelParams.Player.GamesPlayed++;
             if (LevelParams.Player.Highscore < LevelParams.Score)
             {

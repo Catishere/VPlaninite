@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+
 public class PlayerData
 {
     [NonSerialized]
@@ -6,18 +8,22 @@ public class PlayerData
     public string Email;
     public int Highscore;
     public int GamesPlayed;
-    public int LevelReached;
+    public List<string> LevelReachedKeys;
+    public List<int> LevelReachedValues;
 
     public PlayerData()
     {
+        LevelReachedKeys = new List<string>();
+        LevelReachedValues = new List<int>();
     }
 
-    public PlayerData(string userId, string email, int highscore, int gamesPlayed, int levelReached)
+    public PlayerData(string userId, string email, int highscore, int gamesPlayed)
     {
         UserId = userId;
         Email = email;
         Highscore = highscore;
         GamesPlayed = gamesPlayed;
-        LevelReached = levelReached;
+        LevelReachedKeys = new List<string>();
+        LevelReachedValues = new List<int>();
     }
 }

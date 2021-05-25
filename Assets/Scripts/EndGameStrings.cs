@@ -16,9 +16,9 @@ public static class EndGameStrings
 
     private static List<string> WinEndGameSrings = new List<string>()
     {
-        "Алпиниста на квартала",
-        "Планинска коза",
-        "Май си нямаме работа, а?"
+        "Браво",
+        "Поздравления",
+        "Уауу"
     };
 
     public static string GetString()

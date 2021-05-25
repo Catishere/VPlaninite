@@ -7,10 +7,20 @@ public class LevelsPanelButtons : MonoBehaviour
 {
     public Button backButton;
     public Sprite[] backgrounds;
+    public Sprite[] signs;
 
     private void Awake()
     {
         transform.Find("MountainLabel").GetComponent<Text>().text = LevelParams.Mountain;
+        transform.Find("Sign").GetComponent<Image>().sprite = LevelParams.Mountain switch
+        {
+            "Витоша" => signs[0],
+            "Рила" => signs[1],
+            "Пирин" => signs[2],
+            "Стара Планина" => signs[3],
+            _ => signs[1]
+        };
+
         gameObject.GetComponent<Image>().sprite = LevelParams.Mountain switch
         {
             "Витоша" => backgrounds[0],
