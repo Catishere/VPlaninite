@@ -17,12 +17,14 @@ public class LevelGenerator : MonoBehaviour
     {
         Vector3 spawnPosition = new Vector3(0f, -1000f);
         QualitySettings.vSyncCount = 1;
+        var level = int.Parse(LevelParams.Level);
+        var nplatforms = numberOfPlatforms * level;
 
         float step = 0;
         if (LevelParams.Level != null)
-            step = 50 * int.Parse(LevelParams.Level);
+            step = 50 * level;
 
-        for (int i = 0; i < numberOfPlatforms; i++)
+        for (int i = 0; i < nplatforms; i++)
         {
             spawnPosition.y += Random.Range(minY + step, maxY);
             spawnPosition.x = Random.Range(-levelWidth, levelWidth); 
@@ -31,8 +33,8 @@ public class LevelGenerator : MonoBehaviour
 
         spawnPosition.x = 0;
 
-        PopulateLevel(-9950f, spawnPosition.y, numberOfPlatforms/8, plaformPrefabs[1]);
-        PopulateLevel(-9950f, spawnPosition.y, numberOfPlatforms / 4, plaformPrefabs[2]);
+        PopulateLevel(-9950f, spawnPosition.y, nplatforms / 8, plaformPrefabs[1]);
+        PopulateLevel(-9950f, spawnPosition.y, nplatforms / 4, plaformPrefabs[2]);
 
         Instantiate(plaformPrefabs[3], spawnPosition, Quaternion.identity);
 
