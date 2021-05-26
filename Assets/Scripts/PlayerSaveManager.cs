@@ -52,14 +52,15 @@ public class PlayerSaveManager : MonoBehaviour
                 DataSnapshot snapshot = task.Result;
                 playerData = JsonUtility.FromJson<PlayerData>(snapshot.GetRawJsonValue());
                 playerData.UserId = user.UserId;
-
                 Debug.Log("STARTL::LL:L" + user.Email + "  " + user.DisplayName);
-                if (string.IsNullOrEmpty(user.Email))
-                    playerData.Email = user.DisplayName;
-                else
-                    playerData.Email = user.Email;
+                playerData.Email = string.IsNullOrEmpty(user.Email) ? user.DisplayName : user.Email;
                 LevelParams.Player = playerData;
             }
+
+            UnityMainThread.wkr.AddJob(() =>
+            {
+                SceneLoader.Load(SceneLoader.Scene.Main);
+            });
         });
     }
 }
