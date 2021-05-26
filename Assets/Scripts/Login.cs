@@ -30,8 +30,8 @@ public class Login : MonoBehaviour
         auth = FirebaseAuth.DefaultInstance;
         Button loginButtonComponent = loginButton.GetComponent<Button>();
         Button loginGoogleButtonComponent = loginGoogleButton.GetComponent<Button>();
-        loginButtonComponent.onClick.AddListener(login);
-        loginGoogleButtonComponent.onClick.AddListener(loginWithGoogle);
+        loginButtonComponent.onClick.AddListener(CoreLogin);
+        loginGoogleButtonComponent.onClick.AddListener(LoginWithGoogle);
     }
 
     // Update is called once per frame
@@ -43,36 +43,29 @@ public class Login : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             if (email.GetComponent<InputField>().isFocused)
-            {
                 password.GetComponent<InputField>().Select();
-            }
             else
-            {
                 email.GetComponent<InputField>().Select();
-            }
         }
 
         if (Input.GetKeyDown(KeyCode.Return)) {
-            if (pPassword != "" && pEmail != "") {
-
-                login();
-            }
+            if (pPassword != "" && pEmail != "")
+                CoreLogin();
         }
 
         pEmail = email.GetComponent<InputField>().text;
         pPassword = password.GetComponent<InputField>().text;
     }
-    void login()
+    void CoreLogin()
     {
         Credential credential =
         EmailAuthProvider.GetCredential(pEmail, pPassword);
-        loginWithCredentials(credential);
+        LoginWithCredentials(credential);
     }
 
-    void loginWithGoogle()
+    void LoginWithGoogle()
     {
-        if (GoogleSignIn.Configuration == null)
-        GoogleSignIn.Configuration = new GoogleSignInConfiguration
+        GoogleSignIn.Configuration ??= new GoogleSignInConfiguration
         {
             RequestIdToken = true,
             WebClientId = webClientId
@@ -96,12 +89,12 @@ public class Login : MonoBehaviour
             else
             {
                 Credential credential = GoogleAuthProvider.GetCredential(task.Result.IdToken, null);
-                loginWithCredentials(credential);
+                LoginWithCredentials(credential);
             }
         });
     }
 
-    void loginWithCredentials(Credential credential)
+    void LoginWithCredentials(Credential credential)
     {
         auth.SignInWithCredentialAsync(credential).ContinueWith(task => {
             if (task.IsCanceled)
@@ -134,7 +127,6 @@ public class Login : MonoBehaviour
                         SceneLoader.Load(SceneLoader.Scene.Main);
                     });
                 }
-
 
                 playerSaveManager.LoadPlayer(newUser);
             }
