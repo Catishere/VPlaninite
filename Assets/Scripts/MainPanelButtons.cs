@@ -50,11 +50,6 @@ public class MainPanelButtons : MonoBehaviour
             SceneLoader.Load(SceneLoader.Scene.Mountains);
         });
 
-        mapButton.onClick.AddListener(() =>
-        {
-            SceneLoader.Load(SceneLoader.Scene.Map);
-        });
-
         rewardsButton.onClick.AddListener(() =>
         {
             SceneLoader.Load(SceneLoader.Scene.Rewards);

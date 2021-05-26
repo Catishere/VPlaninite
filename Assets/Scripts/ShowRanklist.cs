@@ -25,7 +25,7 @@ public class ShowRanklist : MonoBehaviour
 
     public void LoadRanklist()
     {
-        valueQuery = _ref.OrderByChild("Highscore").LimitToLast(5);
+        valueQuery = _ref.OrderByChild("Highscore").LimitToLast(10);
         valueQuery.ValueChanged += HandleValueChanged;
     }
 
@@ -49,8 +49,10 @@ public class ShowRanklist : MonoBehaviour
                 if (string.IsNullOrEmpty(pd.Email)) continue;
 
                 var obj = Instantiate(listItem);
+                if (pd.Email == LevelParams.Player.Email)
+                    obj.transform.Find("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
                 obj.transform.Find("Text").GetComponent<Text>().text = pd.Email + ": " + pd.Highscore;
-                obj.transform.parent = list.transform;
+                obj.transform.SetParent(list.transform, false);
                 obj.transform.SetAsFirstSibling();
             }
         }

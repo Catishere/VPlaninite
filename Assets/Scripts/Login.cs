@@ -125,18 +125,18 @@ public class Login : MonoBehaviour
                 Debug.LogFormat("User signed in successfully: {0} ({1})",
                     newUser.DisplayName, newUser.UserId);
 
-                playerSaveManager.LoadPlayer(newUser);
-
                 if (credential.Provider == "google.com")
                 {
                     LevelParams.Player = new PlayerData();
                     LevelParams.Player.UserId = newUser.UserId;
-                } 
+                    UnityMainThread.wkr.AddJob(() =>
+                    {
+                        SceneLoader.Load(SceneLoader.Scene.Main);
+                    });
+                }
 
-                UnityMainThread.wkr.AddJob(() =>
-                {
-                    SceneLoader.Load(SceneLoader.Scene.Main);
-                });
+
+                playerSaveManager.LoadPlayer(newUser);
             }
         });
     }

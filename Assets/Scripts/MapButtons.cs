@@ -11,7 +11,7 @@ public class MapButtons : MonoBehaviour
     {
         backButton.onClick.AddListener(() =>
         {
-            SceneLoader.Load(SceneLoader.Scene.Main);
+            SceneLoader.Load(SceneLoader.Scene.GameOver);
         });
     }
 }
