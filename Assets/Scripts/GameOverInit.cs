@@ -43,7 +43,10 @@ public class GameOverInit : MonoBehaviour
                 StartCoroutine(MessageEndCoroutine());
 
                 if (LevelParams.Player.LevelReachedKeys.Contains(LevelParams.Mountain))
-                    LevelParams.Player.LevelReachedValues[LevelParams.Player.LevelReachedKeys.IndexOf(LevelParams.Mountain)] = int.Parse(LevelParams.Level) + 1;
+                {
+                    var index = LevelParams.Player.LevelReachedKeys.IndexOf(LevelParams.Mountain);
+                    LevelParams.Player.LevelReachedValues[index] = Math.Max(int.Parse(LevelParams.Level) + 1, LevelParams.Player.LevelReachedValues[index]);
+                }
                 else
                 {
                     LevelParams.Player.LevelReachedKeys.Add(LevelParams.Mountain);
