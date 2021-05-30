@@ -20,6 +20,8 @@ public class GameOverInit : MonoBehaviour
     private Vector2 girlPos;
     private Vector2 messagePos;
     private bool translateGirl;
+    private IEnumerator coroutine;
+    private bool interrupt;
 
     public PlayerSaveManager playerSaveManager;
 
@@ -38,9 +40,11 @@ public class GameOverInit : MonoBehaviour
             {
                 girlPos = new Vector2(girlStartPos.x - 500f, girl.transform.localPosition.y);
                 messagePos = new Vector2(messageStartPos.x + 800f, message.transform.localPosition.y);
-                message.transform.Find("Text").GetComponent<Text>().text = "Браво";
                 translateGirl = true;
-                StartCoroutine(MessageEndCoroutine());
+                var mountainMessages = LevelGameOverMessages.messages[LevelParams.Mountain];
+                var levelMessages = mountainMessages[int.Parse(LevelParams.Level) - 1];
+                coroutine = MessageEndCoroutine(levelMessages);
+                StartCoroutine(coroutine);
 
                 if (LevelParams.Player.LevelReachedKeys.Contains(LevelParams.Mountain))
                 {
@@ -73,6 +77,11 @@ public class GameOverInit : MonoBehaviour
         {
             SceneLoader.Load(SceneLoader.Scene.Levels);
         });
+
+        message.transform.GetComponent<Button>().onClick.AddListener(() =>
+        {
+            interrupt = true;
+        });
     }
     private void Update()
     {
@@ -87,9 +96,31 @@ public class GameOverInit : MonoBehaviour
             Vector3.SmoothDamp(message.transform.localPosition, messagePos, ref velocity1, smoothTime);
     }
 
-    IEnumerator MessageEndCoroutine()
+    IEnumerator Wait(float waitTime)
     {
-        yield return new WaitForSeconds(3);
+        for (float timer = waitTime; timer >= 0; timer -= Time.deltaTime)
+        {
+            if (interrupt)
+            {
+                interrupt = false;
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator MessageEndCoroutine(List<string> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            var j = i;
+            UnityMainThread.wkr.AddJob(() =>
+            {
+                message.transform.Find("Text").GetComponent<Text>().text = list[j];
+            });
+            yield return Wait(6);
+        }
+
         translateGirl = true;
         girlPos = girlStartPos;
         messagePos = messageStartPos;
