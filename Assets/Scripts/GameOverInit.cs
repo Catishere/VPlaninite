@@ -34,13 +34,14 @@ public class GameOverInit : MonoBehaviour
 
         GameObject.Find("Panel/Score").GetComponent<Text>().text = "Резултат\n" + LevelParams.Score;
 
-        if (LevelParams.Level == "6")
-            GameObject.Find("Panel/RetryButton/Text").GetComponent<Text>().text = "Към теста";
 
         if (LevelParams.Player != null)
         {
             if (LevelParams.IsWin)
             {
+                if (LevelParams.Level == "6")
+                    GameObject.Find("Panel/RetryButton/Text").GetComponent<Text>().text = "Към теста";
+
                 girlPos = new Vector2(girlStartPos.x - 500f, girl.transform.localPosition.y);
                 messagePos = new Vector2(messageStartPos.x + 800f, message.transform.localPosition.y);
                 translateGirl = true;
@@ -59,8 +60,6 @@ public class GameOverInit : MonoBehaviour
                     LevelParams.Player.LevelReachedKeys.Add(LevelParams.Mountain);
                     LevelParams.Player.LevelReachedValues.Add(int.Parse(LevelParams.Level) + 1);
                 }
-
-                LevelParams.IsWin = false;
             }
 
             LevelParams.Player.GamesPlayed++;
@@ -73,11 +72,13 @@ public class GameOverInit : MonoBehaviour
 
         retryButton.onClick.AddListener(() =>
         {
-            SceneLoader.Load(LevelParams.Level == "6" ? SceneLoader.Scene.Map : SceneLoader.Scene.Game);
+            SceneLoader.Load(LevelParams.IsWin && LevelParams.Level == "6" ? SceneLoader.Scene.Map : SceneLoader.Scene.Game);
+            LevelParams.IsWin = false;
         });
 
         levelsButton.onClick.AddListener(() =>
         {
+            LevelParams.IsWin = false;
             SceneLoader.Load(SceneLoader.Scene.Levels);
         });
 

@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontSize
       value: 44
       objectReference: {fileID: 0}
+    - target: {fileID: 4810570322864547438, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00022888184
+      objectReference: {fileID: 0}
     - target: {fileID: 8538182068267448288, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
       propertyPath: m_Name
       value: Mountain (2)
@@ -715,6 +719,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   backButton: {fileID: 134684548}
+  sprites:
+  - {fileID: 21300000, guid: 48105a469ae482047a4f3e15b0302b4b, type: 3}
+  - {fileID: 21300000, guid: 9f87513a4aacab24c8af753997220dea, type: 3}
+  - {fileID: 21300000, guid: aa944d548c5892243896d9d1a280ba16, type: 3}
 --- !u!1 &1739852586
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +997,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: "\u041F\u0438\u0440\u0438\u043D"
       objectReference: {fileID: 0}
+    - target: {fileID: 4810570322864547438, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00022888184
+      objectReference: {fileID: 0}
     - target: {fileID: 8538182068267448288, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
       propertyPath: m_Name
       value: Mountain (1)
@@ -1126,6 +1138,10 @@ PrefabInstance:
     - target: {fileID: 2553070458223380958, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
       propertyPath: m_FontData.m_FontStyle
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4810570322864547438, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00022888184
       objectReference: {fileID: 0}
     - target: {fileID: 8538182068267448288, guid: 9e825e1b6861d9c46a7161b98dbff49b, type: 3}
       propertyPath: m_Name

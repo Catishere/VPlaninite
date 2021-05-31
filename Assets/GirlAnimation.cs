@@ -29,6 +29,18 @@ public class GirlAnimation : MonoBehaviour
         {
             interrupt = true;
         });
+
+        if (LevelParams.Player.QuizScoreKeys.Contains(LevelParams.Mountain))
+        {
+            var index = LevelParams.Player.QuizScoreKeys.IndexOf(LevelParams.Mountain);
+            LevelParams.Player.QuizScoreValues[index] = Math.Max(LevelParams.QuizResult, LevelParams.Player.QuizScoreValues[index]);
+        }
+        else
+        {
+            LevelParams.Player.QuizScoreKeys.Add(LevelParams.Mountain);
+            LevelParams.Player.QuizScoreValues.Add(LevelParams.QuizResult);
+        }
+
         message.transform.Find("Text").GetComponent<Text>().text = "Браво! ти изкара " + LevelParams.QuizResult + " от 6 точки на теста!";
 
         translateGirl = true;
