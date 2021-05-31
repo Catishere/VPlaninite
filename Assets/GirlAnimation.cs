@@ -18,6 +18,8 @@ public class GirlAnimation : MonoBehaviour
     private bool translateGirl;
     private bool interrupt;
     private bool end;
+
+    public PlayerSaveManager playerSaveManager;
     void Start()
     {
         girlStartPos = girl.transform.localPosition;
@@ -40,6 +42,9 @@ public class GirlAnimation : MonoBehaviour
             LevelParams.Player.QuizScoreKeys.Add(LevelParams.Mountain);
             LevelParams.Player.QuizScoreValues.Add(LevelParams.QuizResult);
         }
+
+
+        playerSaveManager.SavePlayer(LevelParams.Player);
 
         message.transform.Find("Text").GetComponent<Text>().text = "Браво! ти изкара " + LevelParams.QuizResult + " от 6 точки на теста!";
 

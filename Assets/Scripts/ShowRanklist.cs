@@ -43,6 +43,7 @@ public class ShowRanklist : MonoBehaviour
 
         if (e2.Snapshot != null && e2.Snapshot.ChildrenCount > 0)
         {
+            var iter = e2.Snapshot.ChildrenCount;
             foreach (var childSnapshot in e2.Snapshot.Children)
             {
                 PlayerData pd = JsonUtility.FromJson<PlayerData>(childSnapshot.GetRawJsonValue());
@@ -50,8 +51,16 @@ public class ShowRanklist : MonoBehaviour
 
                 var obj = Instantiate(listItem);
                 if (pd.Email == LevelParams.Player.Email)
+                {
                     obj.transform.Find("Text").GetComponent<Text>().fontStyle = FontStyle.Bold;
-                obj.transform.Find("Text").GetComponent<Text>().text = pd.Email + ": " + pd.Highscore;
+                    obj.transform.GetComponent<Image>().color = new Color(1f, 0.73f, 0f, 0.4f);
+                }                
+                var txtobj = obj.transform.Find("Text").GetComponent<Text>();
+                txtobj.text = iter + ". " + pd.Email + ": " + pd.Highscore;
+                txtobj.alignment = TextAnchor.MiddleLeft;
+                iter--;
+                txtobj.fontSize = 35;
+
                 obj.transform.SetParent(list.transform, false);
                 obj.transform.SetAsFirstSibling();
             }
