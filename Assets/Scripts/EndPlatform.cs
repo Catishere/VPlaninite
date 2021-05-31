@@ -10,6 +10,6 @@ public class EndPlatform : MonoBehaviour
         Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
         if (rb == null) return;
         LevelParams.IsWin = true;
-        SceneLoader.Load(LevelParams.Level == "6" ? SceneLoader.Scene.Map : SceneLoader.Scene.GameOver);
+        SceneLoader.Load(SceneLoader.Scene.GameOver);
     }
 }

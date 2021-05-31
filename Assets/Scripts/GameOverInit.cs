@@ -34,6 +34,9 @@ public class GameOverInit : MonoBehaviour
 
         GameObject.Find("Panel/Score").GetComponent<Text>().text = "Резултат\n" + LevelParams.Score;
 
+        if (LevelParams.Level == "6")
+            GameObject.Find("Panel/RetryButton/Text").GetComponent<Text>().text = "Към теста";
+
         if (LevelParams.Player != null)
         {
             if (LevelParams.IsWin)
@@ -70,7 +73,7 @@ public class GameOverInit : MonoBehaviour
 
         retryButton.onClick.AddListener(() =>
         {
-            SceneLoader.Load(SceneLoader.Scene.Game);
+            SceneLoader.Load(LevelParams.Level == "6" ? SceneLoader.Scene.Map : SceneLoader.Scene.Game);
         });
 
         levelsButton.onClick.AddListener(() =>

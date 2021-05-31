@@ -17,7 +17,7 @@ public static class Questions
     private static List<Question> _pirinQuestions = new List<Question>()
     {
         new Question("Какво означава “Орбелус”(тракийското име на Пирин)?", new List<string> { "тракийска планина", "космическа планина", "ледена планина", "белоснежна планина"}, "белоснежна планина"),
-        new Question("На колко години е Байкушевата мура?", new List<string> { "900г.", "10 000г.", "1500г", "1300г."}, "1300г."),
+        new Question("На колко години е Байкушевата мура?", new List<string> { "900г.", "10000г.", "1500г", "1300г."}, "1300г."),
         new Question("От какво е направено по-голямата част от ядрото на Пирин?", new List<string> { "магма", "желязо", "графит", "гранит"}, "гранит"),
         new Question("Как се нарича острата пътека в Пирин?", new List<string> { "Котката", "Кучето", "Орбелус", "Кончето"}, "Кончето"),
         new Question("Как се нарича най-високият връх в Пирин", new List<string> { "Момин двор", "Безбог", "Тодорин връх", "Вихрен"}, "Вихрен"),
@@ -30,7 +30,7 @@ public static class Questions
         new Question("Как се нарича и колко е дълга най-дългата пещера във Витоша?", 
             new List<string> { "Духлата (17600 м)", "Духлата (7600 м)", "Дяволското гърло (17600 м)", "Дяволското гърло (7600 м)"}, "Духлата (17600 м)"),
         new Question("Каква форма има Витоша?", new List<string> { "Кулообразна", "Пирамидална", "Триъгълнообразна", "Конусовидна"}, "Кулообразна"),
-        new Question("Как се нарича каменната река във Витоша?", new List<string> {"Морените", "Макарони", "Златните Мостове", "Каменните Мостове"}, "Морените"),
+        new Question("Как се нарича каменната река във Витоша?", new List<string> {"Морените", "Макароните", "Златните Мостове", "Каменните Мостове"}, "Морените"),
         new Question("Как се нарича първата хижа във Витоша?", new List<string> { "Алеко", "Планинец", "Мотен", "Лале"}, "Алеко"),
         new Question("От легендата за Витоша, кой е овчаря?", new List<string> {"Дружба", "Младост", "Левски Г", "Люлин"}, "Люлин")
     };
@@ -64,10 +64,10 @@ public static class Questions
         }
     }
 
-    public static Question GetQuestion()
+    public static Question GetQuestion(int index)
     {
         var questions = _mountainQuestions[LevelParams.Mountain];
-        var question = questions[Random.Range(0, questions.Count)];
+        var question = questions[index];
         question.Answers.Shuffle();
         return question;
     }

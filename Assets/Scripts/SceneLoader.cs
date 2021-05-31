@@ -14,7 +14,8 @@ public static class SceneLoader
         Game,
         Map,
         Rewards,
-        GameOver
+        GameOver,
+        QuizEnd
     };
 
     public static void Load(Scene scene)

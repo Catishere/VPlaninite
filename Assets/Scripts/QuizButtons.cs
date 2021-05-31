@@ -22,13 +22,14 @@ public class QuizButtons : MonoBehaviour
     private Vector2 messagePos;
     private bool translateGirl;
     public Button[] Buttons;
+    private int _index = 0;
     private readonly Text[] _buttonTexts = new Text[10];
 
     private void Awake()
     {
         girlStartPos = girl.transform.localPosition;
         messageStartPos = message.transform.localPosition;
-        SetUpQuestion();
+        SetUpQuestion(_index);
         var colors = Buttons[0].colors;
         for (int i = 0; i < Buttons.Length; i++)
         {
@@ -36,7 +37,10 @@ public class QuizButtons : MonoBehaviour
             Buttons[i].onClick.AddListener(() =>
             {
                 if (Buttons[k].colors.selectedColor == Color.white && Buttons[k].enabled)
-                    StartCoroutine(QuestionCoroutine());
+                {
+                    _index++;
+                    StartCoroutine(QuestionCoroutine(_index));
+                }
 
                 colors.selectedColor = _buttonTexts[k].text == _question.Correct ? Color.green : Color.red;
                 colors.pressedColor = colors.selectedColor;
@@ -47,6 +51,7 @@ public class QuizButtons : MonoBehaviour
                         button.enabled = false;
                 if (colors.selectedColor == Color.green)
                 {
+                    LevelParams.QuizResult++;
                     girlPos = new Vector2(girlStartPos.x - 670f, girl.transform.localPosition.y);
                     messagePos = new Vector2(messageStartPos.x + 820f, message.transform.localPosition.y);
                     message.transform.Find("Text").GetComponent<Text>().text = GetCongratulationString();
@@ -81,25 +86,27 @@ public class QuizButtons : MonoBehaviour
             Vector3.SmoothDamp(message.transform.localPosition, messagePos, ref velocity1, smoothTime);
     }
 
-    IEnumerator QuestionCoroutine()
+    IEnumerator QuestionCoroutine(int index)
     {
         yield return new WaitForSeconds(3);
         translateGirl = true;
         girlPos = girlStartPos;
         messagePos = messageStartPos;
-        SetUpQuestion();
+        SetUpQuestion(index);
     }
 
-    private void SetUpQuestion()
+    private void SetUpQuestion(int index)
     {
-        Question q;
-        _question ??= Questions.GetQuestion();
-        do
+        if (index <= 5)
+            _question = Questions.GetQuestion(index);
+        else
         {
-           q = Questions.GetQuestion();
-        } while (q.QuestionString == _question.QuestionString);
-
-        _question = q;
+            UnityMainThread.wkr.AddJob(() =>
+            {
+                SceneLoader.Load(SceneLoader.Scene.QuizEnd);
+            });
+            return;
+        }
 
         UnityMainThread.wkr.AddJob(() =>
         {

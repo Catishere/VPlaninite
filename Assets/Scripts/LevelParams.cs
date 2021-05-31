@@ -9,4 +9,6 @@ public static class LevelParams
     public static PlayerData Player { get; set; }
     public static string Mountain { get; set; }
     public static int Score { get; set; }
+
+    public static int QuizResult { get; set; }
 }
